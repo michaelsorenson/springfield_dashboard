@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Internal stylesheet import -->
+    <link rel="stylesheet" href="main.css">
+    <!-- External Script -->
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="./assets/springfield.js"></script>
+  </head>
+  <body>
+    <!-- Page Header Table -->
+    <table class="simpleTable" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="5%"><img src="assets/springfield-icon.png" alt="Springfield logo" class="pageLogo"/></td>
+        <td width="15%"><h1>Springfield</h1></td>
+        <td><h2>Energy</h2></td>
+      </tr>
+    </table>
+
+    <!-- Chart Placement Table -->
+    <table class="simpleTable greaterArea">
+      <tr>
+        <td rowspan="2" id="sharedGrid"></td>
+        <td id="legendGrid">
+          <table>
+            <tr>
+              <td id="legendHeader"></td>
+            </tr>
+          </table>
+          <table class="legend">
+            <col style="width:50%">
+            <col style="width:25%">
+            <col style="width:25%">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="unitentry">Power</th>
+                <th class="unitentry">Contribution</th>
+              </tr>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="unitentry"><font color="grey">MW</font></td>
+              <td class="unitentry"><font color="grey">to demand</font></td>
+            </tr>
+            <tr>
+              <th class="legendtype">Sources</th>
+              <th id='source_val' class="legendentry"></th>
+              <th class="legendentry"></th>
+            </tr>
+            <tr>
+              <td class="legendtype"><font color="#FFFF00">&#9641; </font><font color="black">Solar (Rooftop)</div></td>
+              <td id='solar_val' class="legendentry"></td>
+              <td id='solar_perc' class="legendentry"></td>
+            </tr>
+            <tr>
+              <td class="legendtype"><font color="#008000">&#9641; </font><font color="black">Wind</div></td>
+              <td id='wind_val' class="legendentry"></td>
+              <td id='wind_perc' class="legendentry"></td>
+            </tr>
+            <tr>
+              <td class="legendtype"><font color="#2F76E9">&#9641; </font><font color="black">Hydro</div></td>
+              <td id='hydro_val' class="legendentry"></td>
+              <td id='hydro_perc' class="legendentry"></td>
+            </tr>
+            <tr>
+              <td class="legendtype"><font color="#FFA07A">&#9641; </font><font color="black">Gas (CCGT)</div></td>
+              <td id='gas_val' class="legendentry"></td>
+              <td id='gas_perc' class="legendentry"></td>
+            </tr>
+            <tr>
+              <td class="legendtype"><font color="#FF0000">&#9641; </font><font color="black">Distillate</div></td>
+              <td id='dist_val' class="legendentry"></td>
+              <td id='dist_perc' class="legendentry"></td>
+            </tr>
+            <tr>
+              <td class="legendtype">&#9641; Black Coal</td>
+              <td id='coal_val' class="legendentry"></td>
+              <td id='coal_perc' class="legendentry"></td>
+            </tr>
+            <tr>
+              <th class="legendtype">Loads</th>
+              <th id='load_val' class="legendentry"></th>
+              <th class="legendentry"></th>
+            </tr>
+            <tr>
+              <td class="legendtype"><font color="#A569BD">&#9641; </font><font color="black">Exports</div></td>
+              <td id='exp_val' class="legendentry"></td>
+              <td id='exp_perc' class="legendentry"></td>
+            </tr>
+            <tr>
+              <td class="legendtype"><font color="#85C1E9">&#9641; </font><font color="black">Pumps</div></td>
+              <td id="pump_val" class="legendentry"></td>
+              <td id="pump_perc" class="legendentry"></td>
+            </tr>
+            <tr>
+              <th class="legendtype">Net</th>
+              <th id="net_val" class="legendentry"></th>
+              <th class="legendentry"></th>
+            </tr>
+            <tr>
+              <th class="renewheader">Renewables</th>
+              <th class="renewentry"></th>
+              <th id="renew_perc" class="renewentry"></th>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td id="pieGrid"></td>
+      </tr>
+    </table>
+
+    <!-- Internal JS Import -->
+    <script src="main.js"></script>
+  </body>
+</html>
